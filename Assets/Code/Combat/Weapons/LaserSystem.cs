@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LaserCannon : Weapon {
+public class LaserSystem : WeaponSystem {
     [SerializeField] private LaserShot[] laserShots;
     [SerializeField] private float fireRate;
     private float baseFireRate = 0.25f;
@@ -12,12 +12,10 @@ public class LaserCannon : Weapon {
     }
 
     void Start() {
-        Debug.Log(laserShots.Length);
         if (fireRate == 0) {
             fireRate = baseFireRate;
         }
-        base.FireRate = this.fireRate;
+        FireRate = fireRate;
     }
-    
     
 }

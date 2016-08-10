@@ -3,21 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Shooting : MonoBehaviour {
-    [SerializeField] private GameObject[] parentWeapons;
-    private List<Weapon> weapons = new List<Weapon>();
+    private WeaponSystem weaponSystem;
 	// Use this for initialization
 	void Start () {
-	    foreach (GameObject parentWeapon in parentWeapons) {
-	        weapons.Add(parentWeapon.transform.GetChild(0).gameObject.GetComponent<Weapon>());
-	    }
+	        weaponSystem = transform.GetComponentInChildren<WeaponSystem>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	    if (InputMapping.Fire1()) {
-	        foreach (Weapon weapon in weapons) {
-	            weapon.Shoot();
-	        }
+            weaponSystem.Shoot();
 	    }
 	}
 }

@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Weapon : MonoBehaviour {
+public abstract class WeaponSystem : MonoBehaviour {
     public virtual Shot[] shots { get; protected set; }
     public virtual float FireRate { get; protected set; }
-    [SerializeField] protected virtual int currentLevel { get; set; }
+    [SerializeField] public int currentLevel  { get; set; }
     protected float nextFire;
 
-    public Weapon() {
-        currentLevel = 3;
+    public WeaponSystem() {
+        if (currentLevel == 0 || currentLevel == null) {
+            currentLevel = 3;
+        }
     }
 
     // Use this for initialization
@@ -31,7 +33,6 @@ public abstract class Weapon : MonoBehaviour {
     public virtual void Shoot() {
         
         if (WeaponReady()) {
-            Debug.Log(shots[currentLevel-1].name);
             Instantiate(shots[currentLevel-1], transform.position, transform.rotation);
         }
     }
