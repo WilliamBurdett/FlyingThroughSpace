@@ -41,11 +41,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 11468440, guid: 0b975f6a6f402fd42bbde2d9212fafb1, type: 2}
-  relativeDirections:
-  - {x: 0, y: 1, z: 0}
-  - {x: 0, y: -1, z: 0}
+  gunDirections:
+  - {x: 1, y: 1, z: 1}
+  - {x: -1, y: -1, z: 0}
   directions:
-  - {x: 0, y: 20, z: 0}
+  - {x: 0, y: 5, z: 0}
+  - {x: 0, y: 10, z: 0}
   gunPositions:
   - {x: 1, y: 0, z: 0}
   - {x: -1, y: 0, z: 0}

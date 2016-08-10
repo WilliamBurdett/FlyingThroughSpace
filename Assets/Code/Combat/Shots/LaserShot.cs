@@ -4,7 +4,7 @@ using System.Collections;
 public class LaserShot : Shot {
     [SerializeField] private Laser laser;
 
-    [SerializeField] private Vector3[] relativeDirections = {
+    [SerializeField] private Vector3[] gunDirections = {
         new Vector3(1, 1, 1),
         new Vector3(-1, -1, 0),
     };
@@ -21,9 +21,9 @@ public class LaserShot : Shot {
         protected set { bullet = laser; }
     }
 
-    public override Vector3[] baseRelativeDirections {
-        get { return relativeDirections; }
-        protected set { baseRelativeDirections = baseRelativeDirections; }
+    public override Vector3[] baseGunDirections {
+        get { return gunDirections; }
+        protected set { baseGunDirections = baseGunDirections; }
     }
 
     public override Vector3[] baseDirections {
