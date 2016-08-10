@@ -4,7 +4,7 @@ using System.Collections;
 public class Laser : Bullet {
 
 
-    private float speed = 75;
+    private float speed = 120;
     // Use this for initialization
     void Start() {}
 
