@@ -237,6 +237,22 @@ Prefab:
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11431590, guid: 63aefd62f4ee6be43912ceb1fd72a6e9, type: 2}
+      propertyPath: gunPositions.Array.data[0].x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431590, guid: 63aefd62f4ee6be43912ceb1fd72a6e9, type: 2}
+      propertyPath: gunPositions.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431590, guid: 63aefd62f4ee6be43912ceb1fd72a6e9, type: 2}
+      propertyPath: gunPositions.Array.data[1].x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431590, guid: 63aefd62f4ee6be43912ceb1fd72a6e9, type: 2}
+      propertyPath: gunPositions.Array.data[1].y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63aefd62f4ee6be43912ceb1fd72a6e9, type: 2}
   m_IsPrefabParent: 0

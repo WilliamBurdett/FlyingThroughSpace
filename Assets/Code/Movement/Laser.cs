@@ -2,15 +2,17 @@
 using System.Collections;
 
 public class Laser : Bullet {
+    [SerializeField] private float speed;
 
-
-    private float speed = 120;
-    // Use this for initialization
-    void Start() {}
-
-    // Update is called once per frame
-    void Update() {
-        float speedTimeDelta = speed*Time.deltaTime;
-        transform.Translate(0, 0, speedTimeDelta);
+    void Start() {
+        if (speed == 0 || speed == null) {
+            speed = 120;
+        }
     }
+
+    public override float baseSpeed {
+        get { return speed; }
+        protected set { baseSpeed = speed; }
+    }
+    
 }

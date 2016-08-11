@@ -7,8 +7,20 @@ public class LaserSystem : WeaponSystem {
     [SerializeField] private int level;
     private float baseFireRate = 0.25f;
 
+    //Default for laser
+    private Vector3[] gunDirections = {
+        new Vector3(1, 1, 1),
+        new Vector3(-1, -1, 0),
+    };
+
+    //Default for laser
+    private Vector3[] gunPositions = {
+        new Vector3(1, 0, 0),
+        new Vector3(-1, 0, 0),
+    };
+
     public override Shot[] shots {
-        get { return laserShots; } 
+        get { return laserShots; }
         protected set { shots = laserShots; }
     }
 
@@ -17,11 +29,20 @@ public class LaserSystem : WeaponSystem {
         protected set { currentLevel = level; }
     }
 
+    public override Vector3[] baseGunPositions {
+        get { return this.gunPositions; }
+        protected set { baseGunPositions = gunPositions; }
+    }
+
+    public override Vector3[] baseGunDirections {
+        get { return gunDirections; }
+        protected set { baseGunDirections = gunDirections; }
+    }
+
     void Start() {
         if (fireRate == 0) {
             fireRate = baseFireRate;
         }
         FireRate = fireRate;
     }
-    
 }
