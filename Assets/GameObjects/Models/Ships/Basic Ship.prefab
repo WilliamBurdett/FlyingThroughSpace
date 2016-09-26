@@ -174,7 +174,10 @@ MonoBehaviour:
   - {fileID: 11473076, guid: ac0dd9d7ddac8cb448bec8b441fb4d97, type: 2}
   - {fileID: 11452556, guid: e29e291f78f81994890662707dea5193, type: 2}
   - {fileID: 11416904, guid: 21e2f2775b5903b4ebec49820967481f, type: 2}
+  - {fileID: 11416718, guid: 3b5de85a7a00e4c3b81c228285dcb275, type: 2}
+  - {fileID: 11451322, guid: 874985ad78ba44f5b867aa1b8cf4448c, type: 2}
   fireRate: 0
+  level: 0
 --- !u!114 &11470554
 MonoBehaviour:
   m_ObjectHideFlags: 1

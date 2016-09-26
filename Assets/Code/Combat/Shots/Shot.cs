@@ -10,11 +10,12 @@ public abstract class Shot : MonoBehaviour {
         for (int i = 0; i < minSpawnPosDir; i++) {
             foreach (Vector3 baseDirection in baseDirections) {
                 Vector3 spawnLocation = GetSpawenLocation(baseGunPositions[i]);
-                Debug.Log(spawnLocation);
 
                 Bullet shotBullet = (Bullet) Instantiate(bullet, spawnLocation,
                     Quaternion.Euler(transform.rotation.eulerAngles));
-
+                if (gameObject.layer != (int) Layers.LayerEnum.Default) {
+                    shotBullet.gameObject.layer = gameObject.layer;
+                }
 
                 //Calculate angles of shots
                 //Starts with transform's forward angle
@@ -26,6 +27,10 @@ public abstract class Shot : MonoBehaviour {
                         shotBullet.transform.eulerAngles.z + (baseGunDirections[i].z*baseDirection.z));
             }
         }
+    }
+
+    public void SetLayer(Layers.LayerEnum layer) {
+        gameObject.layer = (int) layer;
     }
 
     protected Vector3 GetSpawenLocation(Vector3 baseGunPosition) {

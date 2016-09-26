@@ -5,6 +5,7 @@ public abstract class WeaponSystem : MonoBehaviour {
     public virtual Shot[] shots { get; protected set; }
     public virtual float FireRate { get; protected set; }
     public virtual int currentLevel { get; protected set; }
+    public Layers.LayerEnum layer;
 
     public virtual Vector3[] baseGunPositions { get; protected set; }
     public virtual Vector3[] baseGunDirections { get; protected set; }
@@ -36,6 +37,7 @@ public abstract class WeaponSystem : MonoBehaviour {
     public virtual void Shoot() {
         if (WeaponReady()) {
             Shot shot = (Shot) Instantiate(shots[currentLevel - 1], transform.position, transform.rotation);
+            shot.SetLayer(layer);
             shot.InstantiateBullets(baseGunDirections, baseGunPositions);
         }
     }
