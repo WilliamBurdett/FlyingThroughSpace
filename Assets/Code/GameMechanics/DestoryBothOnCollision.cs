@@ -14,9 +14,7 @@ public class DestoryBothOnCollision : MonoBehaviour {
 	}
 
     void OnCollisionEnter(Collision other) {
-        if (other.gameObject.name != "Basic Ship") {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
-        }
+        Destroy(other.gameObject);
+        Destroy(gameObject);
     }
 }
